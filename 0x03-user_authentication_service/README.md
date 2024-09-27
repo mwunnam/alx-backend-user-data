@@ -40,3 +40,35 @@
     bound to the engine.
     This propert makes sure that there is only one active session at a
     time.(singleton pattern).
+
+##  Task 3
+### Task is all about Querying using ORM
+    Before you can make a query you need to create a session
+1.  Basic Querying:
+    * Retrieve All Rows;
+    `users = session.query(User).all()`
+    * Retrieve First Row:
+    `user = session.query(User).first()`
+    * Retrive by ID:
+    `user = session.query(User).get(user_id)`
+2.  Filtering Results:
+    To filter results you need `filter()` or `filter_by()` methode
+    * Using `filter()`
+    `users = session.query(User).filter(User.email == "test@test.com").all()`
+    * Using `filter_by()`(for simple keyword arguments)
+    `users = seesion.query(User).filter_by(email="test@test.com").first()`
+3.  Chaining Queries
+4.  Sorting Results:
+5.  Limiting Results:
+6.  Pagination:
+7.  Count and Existence Checks:
+8.  Using Aliases:
+10. Handling Exceptions:
+
+
+
+
+
+
+
+
