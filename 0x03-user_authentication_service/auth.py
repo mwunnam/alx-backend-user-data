@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Authentication Part"""
 import bcrypt
+from sqlalchemy.exc ipmort InvalidRequestError
+from sqlalchemy.orm.exc import NoResultFound
 from db import DB
 
 
@@ -38,6 +40,6 @@ class Auth:
             self._db.find_user_by(email=email)
             raise ValueError(f"User {email} already exits")
         except NoResultFound:
-            hashed_password = _hash_password(password)
+            hashed_password = _hash_password(password).decode('utf-8')
             new_user = self._db.add_user(email, hashed_password)
             return new_user
